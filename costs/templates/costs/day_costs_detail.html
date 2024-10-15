@@ -1,0 +1,40 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+
+ 
+{% block title %}
+		
+	Choice Day
+{% endblock %}
+
+
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+
+
+	<form action="{{day.get_absolute_url}}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+	<table style="width:10%">
+  
+	<tr>
+   		 <td>Выберите день{{form.choice_day}}</td>
+    		
+ 	 </tr>
+	</table>
+	
+	</div>
+	<button type="submit" class="btn btn-primary">Выбрать</button>
+	</form>
+	
+
+{{info}}
+{{s}}
+{% endblock %} 
+

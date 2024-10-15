@@ -1,0 +1,53 @@
+﻿{% extends 'costs/base_costs.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	AddMoneyDetail
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<div class="card" style="width: 50rem;background-color: #dddddd;color:#2c2c2c;">
+	{{addmoney.user}}</br>
+ 	 <div class="card-header">
+	
+  	  Информация по объекту
+ 	 </div>
+	 Общая
+  	
+ 	 <ul class="list-group list-group-flush">
+ 	 
+	  <li class="list-group-item">Категория-{{addmoney.category}}</li>
+	  <li class="list-group-item">Дата-{{addmoney.addmoney_date}}</a></li>
+	  <li class="list-group-item">Название-{{addmoney.addmoney_name}}</a></li>
+	  <li class="list-group-item">Сумма-{{addmoney.addmoney_sum}}</a></li>
+  	  	
+{{s}}
+	</div>
+
+	
+{% if request.user.is_authenticated %}
+<div class="obj-panel">
+	<p>Выбрать</p>
+	 {% block obj-panel%}
+		<a class="btn btn-light" href="{{addmoney.get_update_url}}">Редктировать</a>
+		<a class="btn btn-danger" href="{{addmoney.get_delete_url}}">Del</a>
+		<a class="btn btn-light" href="{%url 'addmoneys_front_list_url'%}">Вернуться к списку</a>
+	 {%endblock%}
+</div>
+{% endif%}
+
+
+
+
+<br>
+{{s1}}
+<br>
+</div>
+
+{% endblock %} 
+
+	        

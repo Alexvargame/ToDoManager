@@ -1,0 +1,67 @@
+﻿
+{% extends 'costs/base_costs.html'%}
+ {% load costs_tags %}
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Costs
+{% endblock %}
+ {% load costs_tags %}
+
+{% block content %}
+	<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+		 <th style="width:50%">Назначение</th>
+		 <th style="width:3%">Категория</th>
+   		 <th style="width:3%">Дата</th>
+    		 
+		 <th style="width:3%">Сумма</th>
+		 
+		 
+  		 </tr>
+	
+	
+		
+	{% for money in addmoney%}
+		<tr>
+		 <td style="font-size:80%;"><a href="{{money.get_absolute_url}}">{{money.addmoney_name}}</td>
+		 <td style="font-size:80%;">{{money.category}}</td>
+		 <td style="font-size:80%;">{{money.addmoney_date}}</td>    		 
+	 	 <td style="font-size:80%;">{{money.addmoney_sum}}</td>
+		
+	{% endfor %}
+	
+	
+	</table>
+{{s}}
+Кол-во позиций {% total_addmoneys%}</br>
+
+ <a class="btn btn-info" href="{%url 'addmoney_front_create_url'%}" role="button">Добавить поступление</a> 
+ {% include "pagination.html" with page=addmoney %}
+</div>
+{% endblock %} 
+
+	        
+<!--{{money.get_absolute_url}}-->

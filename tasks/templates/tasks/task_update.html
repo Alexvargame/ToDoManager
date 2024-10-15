@@ -1,0 +1,78 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+
+ 
+{% block title %}
+		
+	Update Task
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+
+
+	<form action="{{task.get_update_url}}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+		<table style="width:100%">
+  
+	<tr>
+   		 <td colspan="5">Название{{form.name}}</td>
+    		
+		 <td></td>
+		
+ 	 </tr>
+
+	 <tr>
+   		 <td>Приоритет{{form.priority}}</td>
+		 <td>Категория{{category}}</td>
+		 <td>Дата начала{{form.date_create}}</td>
+    		 <td>Дата исполнения{{form.date_to_do}}</td>
+		 <td>Статус{{form.status}}</td>
+   		 
+		 
+ 	 </tr>
+	</table>
+	<table style="width:100%">
+	
+	<tr>
+	 
+   	<td style="width:50%">
+	 <details>
+	  <summary>Информация</summary> 
+	{{form.description}}</details></td>
+		 
+		 
+ 	 </tr>
+	 </table>
+<table style="width:100%">
+	 <tr>    
+	  <details style="color:#2c2c2c;text-align: left;">
+	  <summary style="color:#2c2c2c; ">Предыдущие примечания</br> </summary> 
+		 {%for task in task_list%}
+		 {{task}}</br>
+		 {%endfor%}
+	  
+	  </details>
+   	 <td style="width:50%">Примечания{{form.remark}}</td>
+
+ 	 </tr>
+		
+	</table>
+	</div>
+	<button type="submit" class="btn btn-primary">Сохранить</button>
+	</form>
+	
+
+{{s}}
+</div>
+{% endblock %} 
+

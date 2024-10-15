@@ -1,0 +1,5 @@
+﻿<ul>
+ {% for cost in latest_costs %}
+ <li><a href="{{ cost.get_absolute_url }}">{{ cost.cost_name }}</a></li>
+ {% endfor %}
+</ul>

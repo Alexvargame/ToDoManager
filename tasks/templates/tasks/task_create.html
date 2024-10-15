@@ -1,0 +1,60 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+
+{% block title %}
+		
+	Create Task
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+
+
+	<form action="{% url 'task_create_url' %}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+		<table style="width:100%">
+	
+	<tr>
+   		 <td colspan="4">Название{{form.name}}</td>
+
+ 	 </tr>
+
+	 <tr>
+   		 <td>Приоритет{{form.priority}}</td>
+		 <td>Категория{{category}}</td>
+
+	
+		 <td>Дата начала{{form.date_create}}</td>
+    		 <td>Дата исполнения{{form.date_to_do}}</td>
+   		 
+		 
+ 	 </tr>
+	</table>
+	<table style="width:100%">
+	
+	<tr>
+   		 <td style="width:50%">Информация{{form.description}}</td>
+		 <td style="width:50%">Примечания{{form.remark}}</td>
+		 
+ 	 </tr>
+	 
+		
+
+		</table>
+	</div>
+	<button type="submit" class="btn btn-primary">Сохранить</button>
+	</form>
+	
+{{s}}
+</div>
+{% endblock %} 
+

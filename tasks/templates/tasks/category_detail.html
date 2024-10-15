@@ -1,0 +1,70 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Category
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<div class="card" style="width: 50rem;background-color: #dddddd;color:#2c2c2c;">
+ 	 <div class="card-header">
+  	  ИНформация по объекту
+ 	 </div>
+	 Общая
+  	
+ 	 <ul class="list-group list-group-flush">
+ 	  <li class="list-group-item">Название-{{category.name}}</a></li>
+  	 
+	
+	  <p>Дополнительная ифнормация</p
+  	  <li class="list-group-item">
+	   {% for tl in task_list%}
+		<a href="{{tl.get_absolute_url}}">{{tl.name}}</a></br>
+	   {%endfor%}   
+	</li>
+	
+
+  	  
+	
+{{s}}
+	
+</li>
+	</div>
+
+	
+{% if request.user.is_authenticated %}
+
+
+
+<div class="obj-panel">
+	<p>Выбрать</p>
+	 {% block obj-panel%}
+		<a class="btn btn-light" href="{{task.get_update_url}}">Редктировать</a>
+		<a class="btn btn-danger" href="">Del</a>
+		<a class="btn btn-light" href="{%url 'tasks_list_url'%}">Вернуться к списку</a>
+	 {%endblock%}
+	</div>
+{% endif%}
+
+
+
+
+<br>
+{{s1}}
+<br>
+
+
+</div>
+{% endblock %} 
+
+<!--{% for fl in flat.items %}
+		
+		<h4>{{fl.label}}</h4>
+		<p>{{fl}}</p>
+	{% endfor %}
+-->
+

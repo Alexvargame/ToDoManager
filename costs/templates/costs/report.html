@@ -1,0 +1,182 @@
+﻿{% extends 'costs/base_costs.html'%}
+{% load rest_framework %}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Update cost
+{% endblock %}
+
+
+{% block content %}
+	<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 50%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+        'Расходы за период по категориям': 
+	<form action="{% url 'report_cost_url'%}" style="width:70%" method='get'>
+		{% csrf_token %}
+	 
+	<div class="form-group">
+ 	
+	<table style="width:70%">
+  
+	<tr>
+   		
+    		 <td>Категория</td>
+		 <td>Начальная дата</td>
+		 <td>Конечная дата</td>
+		
+	
+ 	 </tr>
+
+	 <tr>
+   		
+		 <td style="width:30%">{{form.category}}</td>
+		 
+		 <td style="width:10%">{{form.date_b}}</td>
+		 <td style="width:10%">{{form.date_e}}</td>
+	
+		
+		 
+ 	 </tr>
+	</table>
+<button type="submit" class="btn btn-primary">Выбрать</button>
+	
+	</div>
+	
+        </form>
+{{s}}</br>
+
+<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+	 <details><summary>Общий</summary>
+	<table>
+  		<tr>
+		 <th style="width:50%">Назначение</th>
+		 <th style="width:3%">Категория</th>
+   		 <th style="width:5%">Дата</th>
+		 <th style="width:5%">Сумма</th>
+		 
+		 
+  		 </tr>
+	
+	
+		
+	{% for cost in costs%}
+		<tr>
+		 <td style="font-size:80%;"><a href="{{cost.get_absolute_url}}">{{cost.cost_name}}</a></td>
+		 <td style="font-size:80%;">{{cost.category}}</td>
+		 <td style="font-size:80%;">{{cost.cost_date}}</td>
+ 
+	 	 <td style="font-size:80%;">{{cost.cost_sum}}</td>
+		</tr>
+	{% endfor %}
+	
+	
+	</table>
+	Итого потрачено: {{summary}}
+	 </details>
+
+	<details><summary>По категориям</summary>
+	<table>
+  		<tr>
+		 <th style="width:3%">Категория</th>
+   		 <th style="width:5%">Расходы</th> 
+  		 </tr>
+	
+	
+		
+	{% for key, value in category_dict.items%}
+		<tr>
+		 <td style="font-size:80%;">{{key}}</td>
+		<td style="font-size:80%;">
+
+		  {%for v in value%}			
+    			<a  class="dropdown-item" href="{{v.get_absolute_url}}">{{v}}</a></br>
+			
+		  {%endfor%}
+	
+		  </td>
+		
+ 		</tr>
+		 
+ 		
+	{% endfor %}
+		
+		
+	
+	
+	</table>
+	Итого по выбранным категориям:{{summary}}
+	 </details>
+
+	
+	<details><summary>По дате</summary>
+	<table>
+  		<tr>
+
+		 <th style="width:3%">Дата</th>
+   		 <th style="width:5%">Расходы</th> 
+  		 </tr>
+	
+	
+		
+	{% for key, value in date_dict.items%}
+		<tr>
+		 <td style="font-size:80%;">{{key}}</td>
+		 <td style="font-size:80%;">
+		 <ul >
+		  {%for v in value%}			
+    		<li><a  class="dropdown-item" href="{{v.get_absolute_url}}">{{v}}</a></li>	
+		  {%endfor%}
+		  </ul>
+	
+		  </td>
+    		</tr>
+		
+	{% endfor %}
+	
+	
+	</table>
+	Итого за период: {{summary}}
+	 </details>
+	</br>
+	{{s}}
+ <a class="btn btn-info" href="{% url 'report_cost_url'%}" role="button">Новый отчет</a> 
+ <a class="btn btn-info" href="{%url 'main_menu_url'%}" role="button">Вернуться на главную</a>
+
+</div>
+{% endblock %} 

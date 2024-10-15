@@ -1,0 +1,2971 @@
+[
+{
+  "model": "costs.categorycost",
+  "pk": 1,
+  "fields": {
+    "name": "Продукты"
+  }
+},
+{
+  "model": "costs.categorycost",
+  "pk": 2,
+  "fields": {
+    "name": "Медицина"
+  }
+},
+{
+  "model": "costs.categorycost",
+  "pk": 3,
+  "fields": {
+    "name": "Телефон, интернет"
+  }
+},
+{
+  "model": "costs.categorycost",
+  "pk": 4,
+  "fields": {
+    "name": "Другое"
+  }
+},
+{
+  "model": "costs.categorycost",
+  "pk": 5,
+  "fields": {
+    "name": "Досуг"
+  }
+},
+{
+  "model": "costs.categoryaddmoney",
+  "pk": 1,
+  "fields": {
+    "name": "Карточный перевод"
+  }
+},
+{
+  "model": "costs.categoryaddmoney",
+  "pk": 2,
+  "fields": {
+    "name": "Наличные"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 42,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "Вода, дирол",
+    "cost_sum": "75.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 43,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "Гречка,туалетные принадлежности, зуб.паста, хлеб(АТБ)",
+    "cost_sum": "232.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 44,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "Творог, масло",
+    "cost_sum": "40.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 45,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "яблоки",
+    "cost_sum": "50.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 46,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "Огурцы",
+    "cost_sum": "40.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 47,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-26",
+    "cost_name": "Колбаса",
+    "cost_sum": "204.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 48,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-06-28",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 49,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-06-28",
+    "cost_name": "Мама",
+    "cost_sum": "1000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 50,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-06-28",
+    "cost_name": "Стрижка",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 51,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Вода",
+    "cost_sum": "17.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 52,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Хлеб",
+    "cost_sum": "16.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 53,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Картофель",
+    "cost_sum": "107.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 54,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Печенье",
+    "cost_sum": "80.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 55,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Пепси, салфетки",
+    "cost_sum": "94.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 56,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Сметана",
+    "cost_sum": "35.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 57,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Курица",
+    "cost_sum": "54.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 58,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "Хлеб",
+    "cost_sum": "20.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 59,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-06-30",
+    "cost_name": "яблоки",
+    "cost_sum": "38.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 60,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-01",
+    "cost_name": "Огурцы",
+    "cost_sum": "41.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 61,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-01",
+    "cost_name": "масло",
+    "cost_sum": "56.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 62,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-01",
+    "cost_name": "яйца",
+    "cost_sum": "37.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 63,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-01",
+    "cost_name": "Глимакс, вальсакор",
+    "cost_sum": "818.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 64,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "Вода",
+    "cost_sum": "46.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 65,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "Печенье, торт",
+    "cost_sum": "96.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 66,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "майонез, хлеб, килька, т.утенок. яблоки",
+    "cost_sum": "168.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 67,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 68,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "черешня",
+    "cost_sum": "50.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 69,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-03",
+    "cost_name": "Хлеб",
+    "cost_sum": "18.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 70,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-04",
+    "cost_name": "Стоматолог",
+    "cost_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 71,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-04",
+    "cost_name": "Дексалгин",
+    "cost_sum": "257.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 72,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-04",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "300.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 73,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-04",
+    "cost_name": "Мама",
+    "cost_sum": "3000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 74,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-06",
+    "cost_name": "Вода, пепси",
+    "cost_sum": "117.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 75,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-06",
+    "cost_name": "Картофель, огурцы, укроп",
+    "cost_sum": "122.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 76,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-06",
+    "cost_name": "Мед.клеенка, ополаскиватель",
+    "cost_sum": "154.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 77,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-06",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 78,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "Вода",
+    "cost_sum": "17.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 79,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "Колбаса, курица",
+    "cost_sum": "295.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 80,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "яблоки",
+    "cost_sum": "32.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 81,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "Огурцы",
+    "cost_sum": "14.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 82,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "черешня",
+    "cost_sum": "53.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 83,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-07",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 84,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-07",
+    "cost_name": "Мед.клеенка",
+    "cost_sum": "175.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 85,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-10",
+    "cost_name": "Хлеб, яблоки, туал. бумага, салфетки, майонез",
+    "cost_sum": "215.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 86,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-10",
+    "cost_name": "Печенье",
+    "cost_sum": "87.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 87,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-10",
+    "cost_name": "Огурцы",
+    "cost_sum": "30.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 88,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-10",
+    "cost_name": "Дексалгин",
+    "cost_sum": "258.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 89,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-11",
+    "cost_name": "Мясо",
+    "cost_sum": "303.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 90,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-11",
+    "cost_name": "яблоки",
+    "cost_sum": "32.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 91,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-11",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 92,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-11",
+    "cost_name": "Вода",
+    "cost_sum": "22.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 93,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-11",
+    "cost_name": "Стоматолог",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 94,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-11",
+    "cost_name": "канц товары",
+    "cost_sum": "12.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 95,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "яблоки",
+    "cost_sum": "40.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 96,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "Колбаса",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 97,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "Пепси, сахар",
+    "cost_sum": "87.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 98,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "Картофель, огурцы, масло",
+    "cost_sum": "148.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 99,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "кефир, мороженое",
+    "cost_sum": "49.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 100,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-14",
+    "cost_name": "хлеб, творого",
+    "cost_sum": "35.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 101,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-14",
+    "cost_name": "Мама",
+    "cost_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 102,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-14",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "200.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 103,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-16",
+    "cost_name": "Печенье",
+    "cost_sum": "38.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 104,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-16",
+    "cost_name": "шампунь",
+    "cost_sum": "136.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 105,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-16",
+    "cost_name": "Курица",
+    "cost_sum": "50.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 106,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-16",
+    "cost_name": "Хлеб",
+    "cost_sum": "21.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 107,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-16",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 108,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-17",
+    "cost_name": "яблоки",
+    "cost_sum": "37.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 109,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-17",
+    "cost_name": "Огурцы",
+    "cost_sum": "22.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 110,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-18",
+    "cost_name": "швабра",
+    "cost_sum": "98.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 111,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-18",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "200.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 112,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-18",
+    "cost_name": "Толик(ходунки)",
+    "cost_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 113,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "Вода",
+    "cost_sum": "22.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 114,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 115,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "яблоки, хлеб,яйца",
+    "cost_sum": "122.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 116,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "Печенье",
+    "cost_sum": "86.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 117,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "Огурцы",
+    "cost_sum": "25.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 118,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-19",
+    "cost_name": "лавр. лист, туалет. бумага",
+    "cost_sum": "57.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 119,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-22",
+    "cost_name": "Мама",
+    "cost_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 120,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-22",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 121,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-23",
+    "cost_name": "Хлеб, яблоки",
+    "cost_sum": "77.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 122,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-23",
+    "cost_name": "Колбаса, курица",
+    "cost_sum": "285.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 123,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-23",
+    "cost_name": "Картофель, огурцы",
+    "cost_sum": "78.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 124,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-23",
+    "cost_name": "кефир, мороженое",
+    "cost_sum": "51.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 125,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-25",
+    "cost_name": "Печенье",
+    "cost_sum": "100.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 126,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-25",
+    "cost_name": "Глимакс",
+    "cost_sum": "46.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 127,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-25",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 128,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-25",
+    "cost_name": "Пепси",
+    "cost_sum": "52.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 129,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-25",
+    "cost_name": "Картофель, огурцы",
+    "cost_sum": "67.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 130,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-25",
+    "cost_name": "майонез",
+    "cost_sum": "20.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 131,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "0002-07-26",
+    "cost_name": "мыло",
+    "cost_sum": "11.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 132,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-26",
+    "cost_name": "вода",
+    "cost_sum": "23.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 133,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-26",
+    "cost_name": "мама",
+    "cost_sum": "1000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 134,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-26",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 135,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-27",
+    "cost_name": "Вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 136,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-27",
+    "cost_name": "Туалетная бумага",
+    "cost_sum": "30.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 137,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-27",
+    "cost_name": "Хлеб",
+    "cost_sum": "34.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 138,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-27",
+    "cost_name": "Морожение",
+    "cost_sum": "18.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 139,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-30",
+    "cost_name": "Курица",
+    "cost_sum": "57.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 140,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-07-30",
+    "cost_name": "Глимакс, вальсакор",
+    "cost_sum": "659.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 141,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-30",
+    "cost_name": "Хлеб, яйца",
+    "cost_sum": "60.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 142,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-07-30",
+    "cost_name": "мыло",
+    "cost_sum": "57.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 143,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-30",
+    "cost_name": "колбаса",
+    "cost_sum": "290.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 144,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-07-30",
+    "cost_name": "Картошка, огурцы, масло, лук, помидоры, арбуз",
+    "cost_sum": "291.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 145,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-01",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "150.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 146,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-01",
+    "cost_name": "Стоматолог",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 147,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-01",
+    "cost_name": "мама",
+    "cost_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 148,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-02",
+    "cost_name": "Хлеб, сметана, сахар",
+    "cost_sum": "74.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 149,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-02",
+    "cost_name": "Печенье, торт",
+    "cost_sum": "100.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 150,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-02",
+    "cost_name": "вода",
+    "cost_sum": "61.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 151,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-02",
+    "cost_name": "Хлеб, мороженое",
+    "cost_sum": "43.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 152,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-02",
+    "cost_name": "Огурцы",
+    "cost_sum": "14.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 153,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-03",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 154,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-03",
+    "cost_name": "Стоматолог",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 155,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "арбуз",
+    "cost_sum": "130.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 156,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-06",
+    "cost_name": "моющее для пола",
+    "cost_sum": "49.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 157,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "Печенье, чай",
+    "cost_sum": "97.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 158,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "пепси, мороженое",
+    "cost_sum": "65.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 159,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "Огурцы, помидоры, лук",
+    "cost_sum": "87.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 160,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "кефир",
+    "cost_sum": "26.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 161,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "творог",
+    "cost_sum": "19.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 162,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "вода",
+    "cost_sum": "23.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 163,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-06",
+    "cost_name": "вода",
+    "cost_sum": "72.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 164,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-06",
+    "cost_name": "Глимакс, левомиколь",
+    "cost_sum": "125.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 165,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-07",
+    "cost_name": "Медсестры и т.д.",
+    "cost_sum": "120.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 166,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-08",
+    "cost_name": "колбаса, курица",
+    "cost_sum": "277.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 167,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-08",
+    "cost_name": "Хлеб",
+    "cost_sum": "23.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 168,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-09",
+    "cost_name": "Огурцы, помидоры, арбуз",
+    "cost_sum": "157.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 169,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-09",
+    "cost_name": "яйца, майонез",
+    "cost_sum": "63.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 170,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-09",
+    "cost_name": "Морожение, хлеб",
+    "cost_sum": "43.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 171,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-09",
+    "cost_name": "вода",
+    "cost_sum": "17.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 172,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-11",
+    "cost_name": "Печенье",
+    "cost_sum": "58.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 173,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-11",
+    "cost_name": "Морожение, хлеб",
+    "cost_sum": "44.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 174,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-11",
+    "cost_name": "вода",
+    "cost_sum": "6.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 175,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-11",
+    "cost_name": "мама",
+    "cost_sum": "1000.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 176,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-12",
+    "cost_name": "Вызов врача",
+    "cost_sum": "400.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 177,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-13",
+    "cost_name": "вода",
+    "cost_sum": "22.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 178,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-13",
+    "cost_name": "Огурцы, помидоры, хлеб",
+    "cost_sum": "97.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 179,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-13",
+    "cost_name": "Лексарства",
+    "cost_sum": "389.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 180,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-15",
+    "cost_name": "Курица, лук",
+    "cost_sum": "60.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 181,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-14",
+    "cost_name": "освежитель",
+    "cost_sum": "50.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 182,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-16",
+    "cost_name": "Картошка, масло, арбуз",
+    "cost_sum": "149.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 183,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-16",
+    "cost_name": "вода",
+    "cost_sum": "12.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 184,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-16",
+    "cost_name": "пепси, мороженое, хлеб",
+    "cost_sum": "96.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 185,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-16",
+    "cost_name": "мама",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 186,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-17",
+    "cost_name": "Ключи",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 187,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-17",
+    "cost_name": "Узи",
+    "cost_sum": "500.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 188,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-17",
+    "cost_name": "Рентген",
+    "cost_sum": "250.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 189,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-18",
+    "cost_name": "Хлеб, мороженое",
+    "cost_sum": "58.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 190,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-18",
+    "cost_name": "вода",
+    "cost_sum": "24.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 191,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-18",
+    "cost_name": "Огурцы, помидоры, арбуз, яйца",
+    "cost_sum": "162.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 192,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-18",
+    "cost_name": "колбаса",
+    "cost_sum": "216.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 193,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-21",
+    "cost_name": "вода",
+    "cost_sum": "23.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 194,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-21",
+    "cost_name": "пепси, мороженое",
+    "cost_sum": "77.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 195,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-21",
+    "cost_name": "Огурцы, помидоры, сливы, хлеб",
+    "cost_sum": "140.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 196,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-21",
+    "cost_name": "Курица",
+    "cost_sum": "42.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 197,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-21",
+    "cost_name": "Хлеб, подсолнечное масло",
+    "cost_sum": "102.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 198,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-21",
+    "cost_name": "Эндокринолог",
+    "cost_sum": "200.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 199,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-21",
+    "cost_name": "Пеленки",
+    "cost_sum": "83.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 200,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-25",
+    "cost_name": "Огурцы, помидоры, арбуз",
+    "cost_sum": "147.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 201,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-25",
+    "cost_name": "соль, мороженое",
+    "cost_sum": "48.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 202,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-25",
+    "cost_name": "вода",
+    "cost_sum": "30.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 203,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-25",
+    "cost_name": "сливы",
+    "cost_sum": "27.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 204,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-25",
+    "cost_name": "Хлеб, майонез, пакеты",
+    "cost_sum": "110.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 205,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-27",
+    "cost_name": "кефир",
+    "cost_sum": "26.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 206,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-27",
+    "cost_name": "колбаса",
+    "cost_sum": "214.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 207,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-26",
+    "cost_name": "мама",
+    "cost_sum": "200.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 208,
+  "fields": {
+    "user": 2,
+    "category": 2,
+    "cost_date": "2023-08-27",
+    "cost_name": "клеенка, валидол",
+    "cost_sum": "194.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 209,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-27",
+    "cost_name": "вода",
+    "cost_sum": "10.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 210,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-27",
+    "cost_name": "пепси, вода",
+    "cost_sum": "60.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 211,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-29",
+    "cost_name": "вода",
+    "cost_sum": "11.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 212,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-29",
+    "cost_name": "Картошка, огурцы, масло, помидоры,туалетная бумага",
+    "cost_sum": "196.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 213,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-29",
+    "cost_name": "Хлеб",
+    "cost_sum": "59.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 214,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-08-30",
+    "cost_name": "мама",
+    "cost_sum": "800.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 215,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-08-31",
+    "cost_name": "вода",
+    "cost_sum": "80.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 216,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-01",
+    "cost_name": "вода",
+    "cost_sum": "20.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 217,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-04",
+    "cost_name": "колбаса",
+    "cost_sum": "237.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 218,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-04",
+    "cost_name": "Хлеб",
+    "cost_sum": "51.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 219,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-04",
+    "cost_name": "пепси, сахар",
+    "cost_sum": "87.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 220,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-04",
+    "cost_name": "Картошка",
+    "cost_sum": "33.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 221,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-07",
+    "cost_name": "Хлеб",
+    "cost_sum": "42.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 222,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-07",
+    "cost_name": "вода",
+    "cost_sum": "8.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 223,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-10",
+    "cost_name": "вода",
+    "cost_sum": "12.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 224,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-10",
+    "cost_name": "Хлеб, мороженое",
+    "cost_sum": "33.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 225,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-09-08",
+    "cost_name": "мама",
+    "cost_sum": "600.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 226,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-11",
+    "cost_name": "колбаса",
+    "cost_sum": "240.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 227,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-11",
+    "cost_name": "Огурцы, помидоры, лук,сливы",
+    "cost_sum": "170.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 228,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-11",
+    "cost_name": "Хлеб, печенье",
+    "cost_sum": "190.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 229,
+  "fields": {
+    "user": 2,
+    "category": 4,
+    "cost_date": "2023-09-11",
+    "cost_name": "мама",
+    "cost_sum": "100.00"
+  }
+},
+{
+  "model": "costs.cost",
+  "pk": 230,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "cost_date": "2023-09-12",
+    "cost_name": "вода",
+    "cost_sum": "20.00"
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 1,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-05-03",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 2,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-05-04",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 15,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-05-05",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 16,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-05-08",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 17,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-05-12",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 18,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-06-23",
+    "costs": []
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 19,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-06-26",
+    "costs": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 20,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-06-28",
+    "costs": [
+      48,
+      49,
+      50
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 21,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-06-30",
+    "costs": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 22,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-01",
+    "costs": [
+      60,
+      61,
+      62,
+      63
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 23,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-03",
+    "costs": [
+      64,
+      65,
+      66,
+      67,
+      68,
+      69
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 24,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-04",
+    "costs": [
+      70,
+      71,
+      72,
+      73
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 25,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-06",
+    "costs": [
+      74,
+      75,
+      76,
+      77
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 26,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-07",
+    "costs": [
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 27,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-10",
+    "costs": [
+      85,
+      86,
+      87,
+      88
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 28,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-11",
+    "costs": [
+      89,
+      90,
+      91,
+      92,
+      93,
+      94
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 29,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-14",
+    "costs": [
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 30,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-16",
+    "costs": [
+      103,
+      104,
+      105,
+      106,
+      107
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 31,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-17",
+    "costs": [
+      108,
+      109
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 32,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-18",
+    "costs": [
+      110,
+      111,
+      112
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 33,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-19",
+    "costs": [
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 34,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-22",
+    "costs": [
+      119,
+      120
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 35,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-23",
+    "costs": [
+      121,
+      122,
+      123,
+      124
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 36,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-25",
+    "costs": [
+      125,
+      126,
+      127,
+      128,
+      129,
+      130
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 37,
+  "fields": {
+    "user": "alex",
+    "day_date": "0002-07-26",
+    "costs": [
+      131
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 38,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-26",
+    "costs": [
+      132,
+      133,
+      134
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 39,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-27",
+    "costs": [
+      135,
+      136,
+      137,
+      138
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 40,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-07-30",
+    "costs": [
+      139,
+      140,
+      141,
+      142,
+      143,
+      144
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 41,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-01",
+    "costs": [
+      145,
+      146,
+      147
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 42,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-02",
+    "costs": [
+      148,
+      149,
+      150,
+      151,
+      152
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 43,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-03",
+    "costs": [
+      153,
+      154
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 44,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-06",
+    "costs": [
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 45,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-07",
+    "costs": [
+      165
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 46,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-08",
+    "costs": [
+      166,
+      167
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 47,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-09",
+    "costs": [
+      168,
+      169,
+      170,
+      171
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 48,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-11",
+    "costs": [
+      172,
+      173,
+      174,
+      175
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 49,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-12",
+    "costs": [
+      176
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 50,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-13",
+    "costs": [
+      177,
+      178,
+      179
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 51,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-15",
+    "costs": [
+      180
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 52,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-14",
+    "costs": [
+      181
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 53,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-16",
+    "costs": [
+      182,
+      183,
+      184,
+      185
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 54,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-17",
+    "costs": [
+      186,
+      187,
+      188
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 55,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-18",
+    "costs": [
+      189,
+      190,
+      191,
+      192
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 56,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-21",
+    "costs": [
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 57,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-25",
+    "costs": [
+      200,
+      201,
+      202,
+      203,
+      204
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 58,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-27",
+    "costs": [
+      205,
+      206,
+      208,
+      209,
+      210
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 59,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-26",
+    "costs": [
+      207
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 60,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-29",
+    "costs": [
+      211,
+      212,
+      213
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 61,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-30",
+    "costs": [
+      214
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 62,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-08-31",
+    "costs": [
+      215
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 63,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-01",
+    "costs": [
+      216
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 64,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-04",
+    "costs": [
+      217,
+      218,
+      219,
+      220
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 65,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-07",
+    "costs": [
+      221,
+      222
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 66,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-10",
+    "costs": [
+      223,
+      224
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 67,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-08",
+    "costs": [
+      225
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 68,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-11",
+    "costs": [
+      226,
+      227,
+      228,
+      229
+    ]
+  }
+},
+{
+  "model": "costs.daycost",
+  "pk": 69,
+  "fields": {
+    "user": "alex",
+    "day_date": "2023-09-12",
+    "costs": [
+      230
+    ]
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-06-23",
+    "addmoney_name": "работа",
+    "addmoney_sum": "2000.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-06-25",
+    "addmoney_name": "пенсия",
+    "addmoney_sum": "5200.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-06-29",
+    "addmoney_name": "работа",
+    "addmoney_sum": "1800.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 6,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-07-01",
+    "addmoney_name": "На лечение",
+    "addmoney_sum": "12000.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 7,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-07-07",
+    "addmoney_name": "На лечение",
+    "addmoney_sum": "10000.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-07-27",
+    "addmoney_name": "Пенсия",
+    "addmoney_sum": "5200.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 9,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-08-15",
+    "addmoney_name": "На лечение",
+    "addmoney_sum": "4500.00"
+  }
+},
+{
+  "model": "costs.addmoney",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "category": 1,
+    "addmoney_date": "2023-08-27",
+    "addmoney_name": "Пенсия",
+    "addmoney_sum": "5200.00"
+  }
+}
+]

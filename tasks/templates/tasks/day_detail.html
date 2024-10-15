@@ -1,0 +1,76 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Day
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<div class="card" style="width: 50rem;background-color: #dddddd;color:#2c2c2c;">
+ 	 <div class="card-header">
+  	  Информация по объекту
+ 	 </div>
+	 Общая
+  	
+ 	 <ul class="list-group list-group-flush">
+ 	  <li class="list-group-item">Дата-{{day.day_date}}</a></li>
+  	  <li class="list-group-item">День недели-{{ day.day_date|date:"D" }}</li>
+	  
+  	  <li class="list-group-item">Список заданий</br>
+		{% for task in day.tasks.all%}
+		<details>
+	  	<summary style={%if task.date_to_do|date:'Y-M-d' == day.day_date|date:'Y-M-d'%} color:red; {%else%} color:black; {%endif%}>{{task.name}}</br></summary>
+		<li class="list-group-item">Приоритет-{{task.priority}}</li>
+		<li class="list-group-item">Категория-{{task.category}}</li>
+  	  	<li class="list-group-item">Дата создания-{{task.date_create}}</li>
+	 	<li class="list-group-item">Дата исполнения-{{task.date_to_do}}</a></li>
+  	  	<li class="list-group-item">Статус-{{task.status}}</li>		
+		<li class="list-group-item" style="text-align: left;">Описание- {{task.description}}</br></li>
+ 		<li class="list-group-item" style="text-align: left;">Примечания-
+		 {% for remark in task.get_remark%}{{remark}}</br>{%endfor%}</li>
+		<a class="btn btn-light" href="{{task.get_update_url}}">Редактировать</a>
+		</details>
+
+		{%endfor%}
+		
+		</li>
+	  
+	
+	</div>
+
+	
+{% if request.user.is_authenticated %}
+
+
+
+<div class="obj-panel">
+	<p>Выбрать</p>
+	 {% block obj-panel%}
+		<a class="btn btn-light" href="{{day.get_update_url}}">Редактировать</a>
+		<a class="btn btn-danger" href="">Del</a>
+		<a class="btn btn-light" href="{%url 'choice_day_url'%}">Вернуться к выбору</a>
+	 {%endblock%}
+	</div>
+{% endif%}
+
+
+
+<br>
+{{s}}
+<br>
+
+</div>
+
+{% endblock %} 
+
+<!--{% for fl in flat.items %}
+		
+		<h4>{{fl.label}}</h4>
+		<p>{{fl}}</p>
+	{% endfor %}
+-->
+

@@ -1,0 +1,22 @@
+﻿{% extends 'costs/base_costs.html'%}
+
+ 
+{% block title %}
+		
+	Delete Category
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+
+	<form action="{{categorycost_delete.get_delete_url}}" method='post'>
+		{% csrf_token %}
+	<h3>Вы уверены, что хотите удалить объект?<b>"{{categorycost_delete.id}}"</b></h3>
+	<a href="{{categorycost_delete.get_absolute_url}}">Отменить</a>
+	<button type="submit" class="btn btn-danger">Удалить</button>
+	</form>
+	
+</div>
+{% endblock %} 
+

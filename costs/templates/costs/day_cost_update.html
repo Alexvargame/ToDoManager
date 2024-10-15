@@ -1,0 +1,45 @@
+﻿{% extends 'costs/base_costs.html'%}
+{% load rest_framework %}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Update DayCost
+{% endblock %}
+
+
+{% block content %}
+
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 30%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+	{{daycost.day_date}}
+	<form action="{{daycost.get_update_url}}" method='post' enctype="multipart/form-data">
+		{% csrf_token %}
+	 {%render_form serializer%}
+	
+	<div class="form-group">
+<button type="submit" class="btn btn-primary">Сохранить</button>
+	
+	</div>
+	
+        </form>
+{{s}}</br>
+
+
+{% endblock %} 

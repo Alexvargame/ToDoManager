@@ -1,0 +1,45 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+
+ 
+{% block title %}
+		
+	Update Day
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+
+
+	<form action="{{day.get_update_url}}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+	<table style="width:10%">
+  
+	<tr>
+   		 <td>Дата </br>{{day.day_date}}</td>
+    		
+ 	 </tr>
+	<tr>
+   		 <td>Выберите задания{{tasks}}</td>
+    		
+ 	 </tr>
+	</table>
+	
+	</div>
+	<button type="submit" class="btn btn-primary">Редактировать</button>
+	</form>
+	
+
+{{s}}
+</div>
+{% endblock %} 
+

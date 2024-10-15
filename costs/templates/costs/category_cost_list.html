@@ -1,0 +1,59 @@
+﻿{% extends 'costs/base_costs.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	CategoryCosts
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+
+		 <th style="width:30%">Название</th>
+
+  		 </tr>
+	
+	
+		
+	{% for category in categorycost%}
+		<tr>
+		
+		  <td style="font-size:80%;"><a href="{{category.get_absolute_url}}">{{category.name}}</a></td>
+	
+		
+	{% endfor %}
+	
+	
+	</table>
+{{s}}
+ <a class="btn btn-info" href="{%url 'category_cost_front_create_url'%}" role="button">Новая категория</a>
+ {% include "pagination.html" with page=categorycost %}
+</div>
+{% endblock %} 
+
+	        
+<!--{flat.get_absolute_url}-->

@@ -1,0 +1,68 @@
+﻿{% extends 'costs/base_costs.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Cost
+{% endblock %}
+
+
+{% block content %}
+<div class="features" style="text-align: left;">
+      
+	<div class="card" style="width: 50rem;background-color: #dddddd;color:#fff">
+ 	 <div class="card-header">
+	Пользователь-{{user}}
+	{{daycost.day_date}}
+        {{date}} {{message}}
+ 	 </div>
+	 Расходы:
+  	
+ 	 <ul class="list-group list-group-flush">
+	  <li class="list-group-item">
+		{% for cost in daycost.costs.all%}
+		{{cost.cost_name}}-{{cost.cost_sum}}</br>
+		{%endfor%}
+	 </li>
+  	 Итого: {{daycost.get_day_sum}} 
+	
+
+	
+		
+	</div>
+{{s}}
+	
+{% if request.user.is_authenticated %}
+
+
+
+<div class="obj-panel">
+	<p>Выбрать</p>
+	 {% block obj-panel%}
+		<a class="btn btn-light" href="{{daycost.get_update_url}}">Редктировать</a>
+	
+		<a class="btn btn-danger" href="">Del</a>
+		<a class="btn btn-light" href="{%url 'day_cost_front_list_url'%}">Вернуться к списку</a>
+	 {%endblock%}
+	</div>
+{% endif%}
+
+
+
+
+<br>
+{{s1}}
+<br>
+
+</div>
+
+{% endblock %} 
+
+<!--{% for fl in flat.items %}
+		
+		<h4>{{fl.label}}</h4>
+		<p>{{fl}}</p>
+	{% endfor %}
+-->
+

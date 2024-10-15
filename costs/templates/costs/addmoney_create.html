@@ -1,0 +1,44 @@
+﻿{% extends 'costs/base_costs.html'%}
+{% load rest_framework %}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Create AddMoney
+{% endblock %}
+
+
+{% block content %}
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 30%;
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+	<form action="{%url 'addmoney_front_create_url'%}" method='post'>
+		{% csrf_token %}
+	 {%render_form serializer%}
+	<div class="form-group" style="width:50%">
+	
+<button type="submit" class="btn btn-primary">Сохранить</button>
+	
+	</div>
+	
+        </form>
+{{s}}</br>
+
+
+{% endblock %} 
+<--{{addmoney.get_absolute_url}}-->

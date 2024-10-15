@@ -1,0 +1,79 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Tasks
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+   		 <th style="width:10%">Название</th>
+    		 <th style="width:3%">Приоритет</th>
+		 <th style="width:3%">Категория</th>
+    		 <th style="width:4%">Дата создания</th>
+		 <th style="width:4%">Дата исполнения</th>
+		 <th style="width:4%">Статус</th>
+		 <th style="width:35%">Описание</th>
+		 <th style="width:35%">Примечания</th>
+		 
+  		 </tr>
+	
+	
+		
+	{% for task in tasks%}
+		<tr>
+		 <td style="font-size:80%;"><a href="{{task.get_absolute_url}}">{{task.name}}</a></td>
+    		 <td style="font-size:80%;">{{task.priority}}</td>
+		 <td style="font-size:80%;">{{task.category}}</td>
+		 <td style="font-size:80%;">{{task.date_create}}</td>
+		 <td style="font-size:80%;">{{task.date_to_do}}/{{flat.floors}}</td>
+		 <td style="font-size:80%;">{{task.status}}</td>
+		 <td style="font-size:80%;">
+		 <details><summary>Развернуть</summary>{{task.description}}</details></td>
+		 <td style="font-size:80%;">
+		 <details><summary>Развернуть</summary>
+		 {%for t in task.get_remark%}
+			{{t}}</br>
+			{%endfor%}
+		  </details></td>
+			
+			</td>
+		 
+		</tr>
+	{% endfor %}
+	
+	
+	</table>
+ <a class="btn btn-info" href="{%url 'task_create_url'%}" role="button">Новое задание</a>
+{% include "pagination.html" with page=tasks %}
+</div>
+{{s}}
+{% endblock %} 
+
+	        
+<!--{flat.get_absolute_url}-->

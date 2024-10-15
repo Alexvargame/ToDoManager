@@ -1,0 +1,31 @@
+﻿{% extends 'costs/base_costs.html'%}
+
+ 
+{% block title %}
+		
+	Delete Cost
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+	
+
+	<form action="{{cost_delete.get_delete_url}}" method='post'>
+		{% csrf_token %}
+	<h3>Вы уверены, что хотите удалить объект?<b>"{{cost_delete.cost_name}}"</b></h3>
+	<a href="{{cost_delete.get_absolute_url}}">Отменить</a>
+	<button type="submit" class="btn btn-danger">Удалить</button>
+	</form>
+</div>	
+
+{% endblock %} 
+

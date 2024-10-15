@@ -1,0 +1,52 @@
+﻿{% extends 'tasks/base_tasks.html'%}
+
+ 
+{% block title %}
+		
+	Create Day
+{% endblock %}
+
+
+{% block content %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+}
+</style>
+	
+
+
+	<form action="{% url 'create_day_url' %}" method='post'>
+		{% csrf_token %}
+	<div class="form-group">
+	<table style="width:10%">
+	
+	 <tr>     
+		 
+		 <td>Пользователь</br>{{user}}</td>
+    		
+ 	 </tr>
+  
+	<tr>     
+		  
+   		 <td>Выберите день{{form.day_date}}</td>
+
+    		
+ 	 </tr>
+	<tr>
+   		 <td>Выберите задания{{tasks}}</td>
+    		
+ 	 </tr>
+	</table>
+	
+	</div>
+	<button type="submit" class="btn btn-primary">Создать</button>
+	</form>
+	
+
+{{info}}
+{{s}}
+{% endblock %} 
+

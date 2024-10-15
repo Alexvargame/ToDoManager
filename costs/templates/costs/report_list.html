@@ -1,0 +1,63 @@
+﻿{% extends 'costs/base_costs.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Costs
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+		 <th style="width:3%">I</th>
+		 <th style="width:3%">Категория</th>
+   		 <th style="width:5%">Дата</th>
+    		 <th style="width:50%">Назначение</th>
+		 <th style="width:5%">Сумма</th>		 
+  		 </tr>
+	
+	
+		
+	{% for cos in costs%}
+		<tr>
+		 <td style="font-size:80%;"><a href="{{cos.get_absolute_url}}">I</a></td>
+		 <td style="font-size:80%;">{{cos.category}}</td>
+		 <td style="font-size:80%;">{{cos.cost_date}}</td>
+    		 <td style="font-size:80%;">{{cos.cost_name}}</td>
+	 	 <td style="font-size:80%;">{{cos.cost_sum}}</td>
+		
+	{% endfor %}
+	
+	
+	</table>
+	Итого: {{summary}}
+	</br>
+	{{s}}
+</div>
+{% endblock %} 
+
+	        
+<!--{flat.get_absolute_url}-->

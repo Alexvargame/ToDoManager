@@ -1,0 +1,67 @@
+﻿{% extends 'costs/base_costs.html'%}
+ 
+	<h1>HI</h1>
+ 
+{% block title %}
+		
+	Costs
+{% endblock %}
+
+
+{% block content %}
+<div class="features">
+	<style>
+		table {
+ 		 font-family: arial, sans-serif;
+ 		 border-collapse: collapse;
+ 		 width: 100%;
+		
+		}
+
+		td, th {
+  		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 2px;
+		heigth: 5px;
+		}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+		}
+	</style>
+
+	<table>
+  		<tr>
+		 <th style="width:1%">I</th>
+   		 <th style="width:5%">Дата</th>
+    		 <th style="width:50%">Расходы</th>
+		 <th style="width:10%">Сумма</th>
+		 
+		 
+  		 </tr>
+	
+	
+		
+	{% for day in daycost%}
+		<tr>
+		 <td style="font-size:80%;"><a href="{{day.get_absolute_url}}">I</a></td>
+		<td style="font-size:80%;">{{day.day_date}}</a></td>
+		 <td style="font-size:80%;">
+		{% for cost in day.costs.all%}
+		
+		{{cost}}</br>
+		{%endfor%}
+		</td>
+		<td style="font-size:80%;">{{day.get_day_sum}}</td>
+		
+	{% endfor %}
+	
+	
+	</table>
+ <a class="btn btn-info" onclick="update_daycost()" role="button">Обновить данные</a>
+ {% include "pagination.html" with page=daycost %}
+</div>
+{% endblock %} 
+
+	        
+<!--{flat.get_absolute_url}-->
