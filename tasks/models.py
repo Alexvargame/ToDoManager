@@ -92,8 +92,16 @@ class DayPlan(models.Model):
     def get_absolute_url(self):
         return reverse('day_detail_url',args=[self.day_date.year,self.day_date.month, self.day_date.day, self.user])#kwargs={'pk':self.id})
     def get_update_url(self):
-        return reverse('day_update_url',args=[self.day_date.year,self.day_date.month, self.day_date.day, self.user])#kwargs={'pk':self.id})
+        return reverse('day_update_url', args=[self.day_date.year,self.day_date.month, self.day_date.day, self.user])#kwargs={'pk':self.id})
 
 
 
+
+class EveryDayTask(models.Model):
+    body = models.JSONField()
+    date_everydaytask = models.DateField()
+
+    class Meta:
+        verbose_name = "Каждодневное задание"
+        verbose_name_plural = "Каждодневные задания"
 

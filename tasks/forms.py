@@ -42,7 +42,6 @@ class  ChoiceDayForm(forms.Form):
 
 class  CreateDayForm(forms.ModelForm):
 
- 
 
     class Meta:
         model=DayPlan
@@ -69,6 +68,7 @@ class TaskSearchForm(forms.Form):
                              widget=forms.CheckboxSelectMultiple(choices=sorted([(obj.name,obj.name) for obj in CategoryTask.objects.all()])))
     #description=models.CharField(label='Описание',max_length=500)
     #remark=models.CharField('Примечания',max_length=500,default='',blank=True)
+    name = forms.CharField(label='Название')
     date_create_b=forms.DateField(label='начальная дата',widget=forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}))
     date_create_e=forms.DateField(label='конечная дата',widget=forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}))
     date_to_do_b=forms.DateField(label='начальная дата',widget=forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}))

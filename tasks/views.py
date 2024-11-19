@@ -12,6 +12,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from .models import Task, DayPlan,CategoryTask,Priority
 from .forms import TaskForm, ChoiceDayForm, CreateDayForm, CreateDayTasksForm, TaskSearchForm
+from django.db.models import Q
 
 def main_menu(request):
     return render(request,'tasks/main_page.html')
@@ -191,15 +192,17 @@ class TaskSearch(LoginRequiredMixin,View):
             else:
                 status_list=[False,True]
 
-                
+            name = form['name'].value()
             date_create_b=[int(i) for i in request.GET['date_create_b'].split('-')]
             date_create_e=[int(i) for i in request.GET['date_create_e'].split('-')]
             date_to_do_b=[int(i) for i in request.GET['date_to_do_b'].split('-')]
             date_to_do_e=[int(i) for i in request.GET['date_to_do_e'].split('-')]
     
-            tasks=Task.objects.filter(user=request.user.username,priority__in=priority_list, category__in=category_list,status__in=status_list,
-                                     date_create__range=(date(date_create_b[0],date_create_b[1],date_create_b[2]),date(date_create_e[0],date_create_e[1],date_create_e[2])),
-                                     date_to_do__range=(date(date_to_do_b[0],date_to_do_b[1],date_to_do_b[2]),date(date_to_do_e[0],date_to_do_e[1],date_to_do_e[2])))
+            tasks = Task.objects.filter(
+                Q(name__icontains=name.lower()) | Q(name__icontains=name.upper()) | Q(name__icontains=name.capitalize()),
+                user=request.user.username,priority__in=priority_list, category__in=category_list, status__in=status_list,
+                                     date_create__range=(date(date_create_b[0], date_create_b[1], date_create_b[2]), date(date_create_e[0], date_create_e[1], date_create_e[2])),
+                                     date_to_do__range=(date(date_to_do_b[0], date_to_do_b[1], date_to_do_b[2]), date(date_to_do_e[0], date_to_do_e[1], date_to_do_e[2])))
             str_url=''
             for key, value in request.GET.items():
                 str_url=str_url+key+'='+value+'&'

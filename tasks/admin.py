@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mptt.admin import MPTTModelAdmin
-from .models import  Task, Priority, DayPlan, CategoryTask
+from .models import  Task, Priority, DayPlan, CategoryTask, EveryDayTask
 
 #admin.site.index_template = 'memcache_status/admin_index.html'
 
@@ -31,6 +31,9 @@ class CategoryTaskAdmin(MPTTModelAdmin):
     save_as=True
     save_on_top=True
 
+@admin.register(EveryDayTask)
+class EveryDayTask(admin.ModelAdmin):
+    list_display = ('id', 'body', 'date_everydaytask')
 
 
 ##@admin.register(Category)
