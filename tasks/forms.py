@@ -6,7 +6,7 @@ from .models import Task, DayPlan, CategoryTask, Priority
 from datetime import datetime, date, time
 
 
-class  TaskForm(forms.ModelForm):
+class TaskForm(forms.ModelForm):
 
     category=forms.CharField(widget=forms.Select(choices=sorted([(obj.name,obj.name) for obj in CategoryTask.objects.all()]),attrs={'class':'form-control'}))
 
@@ -36,30 +36,34 @@ class  TaskForm(forms.ModelForm):
 ##        return data
 ##        
 
-class  ChoiceDayForm(forms.Form):
-   
-    choice_day=forms.DateField(label='Выберите дату',widget=forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}))
 
-class  CreateDayForm(forms.ModelForm):
+class ChoiceDayForm(forms.Form):
+
+    choice_day = forms.DateField(label='Выберите дату',widget=forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}))
 
 
+class CreateDayForm(forms.ModelForm):
     class Meta:
         model=DayPlan
         fields=['day_date']
         widgets={
             'day_date':forms.DateInput(attrs={'class':'form-control', 'empty_value':True,'type':'date'}),
             #'user':forms.TextInput(attrs={'class':'form-control', 'empty_value':True})#, 'disabled':True}),
-      
            }
 
 
-class  CreateDayTasksForm(forms.Form):
+class CreateDayTasksForm(forms.Form):
 
-    tasks=forms.CharField(label='Задания на выбор',
-                          widget=forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.all()],attrs={'class':'form-control'}))
+    tasks = forms.CharField(label='Задания на выбор', required=False,
+                          widget=forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.all()],
+                          attrs={'class':'form-control'}))
 
-    
-    
+class EveryDayTaskForm(forms.Form):
+    # body = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'empty_value':True}))
+    # comment = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control', 'empty_value':True}))
+    body = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'empty_value':True}))
+    comment = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control', 'empty_value':True}))
+
 class TaskSearchForm(forms.Form):
     
     #priorites=[(obj.priority,obj.priority) for obj in Priority.objects.all()]

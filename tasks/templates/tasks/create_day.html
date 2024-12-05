@@ -18,35 +18,39 @@ table, th, td {
 	
 
 
-	<form action="{% url 'create_day_url' %}" method='post'>
+	<form action="{% url 'create_day_url' %}" method='post' enctype="multipart/form-data">
 		{% csrf_token %}
-	<div class="form-group">
-	<table style="width:10%">
-	
-	 <tr>     
-		 
-		 <td>Пользователь</br>{{user}}</td>
-    		
- 	 </tr>
-  
-	<tr>     
-		  
-   		 <td>Выберите день{{form.day_date}}</td>
-
-    		
- 	 </tr>
-	<tr>
-   		 <td>Выберите задания{{tasks}}</td>
-    		
- 	 </tr>
+	<div class="form-group" style="width:100%">
+	<table style="width:15%">
+	 	<tr>
+			<td>Пользователь</br>{{user}}</td>
+	 	</tr>
+		<tr>
+			<td>Выберите день{{form.day_date}}</td>
+		</tr>
+		<tr>
+			<td>Выберите задания{{tasks}}</td>
+		 </tr>
 	</table>
-	
-	</div>
-	<button type="submit" class="btn btn-primary">Создать</button>
-	</form>
-	
 
-{{info}}
+	<table style="width:70%">
+		<tr>
+			 <td style="width:100%">Наименование</td>
+		</tr>
+		{{ formset.management_form }}
+		{% for form in formset%}
+			 <tr>
+				 <td style="width:130%">{{form.body}}</td>
+			 </tr>
+		{%endfor%}
+	</table>
+
+	<button type="submit" class="btn btn-primary">Создать</button>
+
+	</div>
+	</form>
+
+
 {{s}}
 {% endblock %} 
 

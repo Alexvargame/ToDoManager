@@ -38,13 +38,13 @@
 			<tr>
 				 <td>Наименование</td>
 				 <td>Сумма</td>
-			 </tr>
+			</tr>
 			{{ formset.management_form }}
 			{% for form in formset%}
-			 <tr>
-				 <td style="width:80%">{{form.cost_name}}</td>
-				 <td style="width:50%">{{form.cost_sum}}</td>
-			</tr>
+				 <tr>
+					 <td style="width:80%">{{form.cost_name}}</td>
+					 <td style="width:50%">{{form.cost_sum}}</td>
+				 </tr>
 			{%endfor%}
 		</table>
 

@@ -387,7 +387,7 @@ class CostCreateFrontView(LoginRequiredMixin,ObjectCreateMixin, APIView):
 class CostManyCreateFrontView(LoginRequiredMixin, APIView):
 
     def get(self, request):
-        form = CostManyCreateForm(initial={'cost_date':date.today()})
+        form = CostManyCreateForm(initial={'cost_date': date.today()})
         SectionFormset = formset_factory(CostForm, extra=4)
         formset = SectionFormset()
         return render(request, 'costs/cost_many_create.html', {'form': form, 'formset': formset})

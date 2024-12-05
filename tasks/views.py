@@ -9,9 +9,12 @@ from django.contrib.auth.models import User
 from users.models import Profile, PhoneNumber
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.forms.models import formset_factory
 
-from .models import Task, DayPlan,CategoryTask,Priority
-from .forms import TaskForm, ChoiceDayForm, CreateDayForm, CreateDayTasksForm, TaskSearchForm
+
+from .models import Task, DayPlan, CategoryTask, Priority, EveryDayTask
+from .forms import TaskForm, ChoiceDayForm, CreateDayForm, CreateDayTasksForm, TaskSearchForm, EveryDayTaskForm
+
 from django.db.models import Q
 
 def main_menu(request):
@@ -45,52 +48,96 @@ class DayCreate(LoginRequiredMixin,View):
 
     def get(self, request):
        
-        form=CreateDayForm(initial={'user':request.user.username})
-        form_t=CreateDayTasksForm()
-        return render(request,'tasks/create_day.html',context={'form':form, 'user':request.user.username,
-            'tasks':form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2025,1,1)))]))})
+        form = CreateDayForm(initial={'user': request.user.username})
+        form_t = CreateDayTasksForm()
+        SectionFormset = formset_factory(EveryDayTaskForm, extra=6)
+        formset = SectionFormset()
+        return render(request,'tasks/create_day.html', context={'form': form, 'user':request.user.username, 'formset': formset,
+            'tasks': form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name, t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2025,1,1)))]))})
     def post(self,request):
+        SectionFormset = formset_factory(EveryDayTaskForm, extra=6)
        
-        bound_form=CreateDayForm(request.POST,initial={'user':request.user.username})
+        bound_form=CreateDayForm(request.POST, initial={'user': request.user.username})
         bound_form_t=CreateDayTasksForm(request.POST)
-       
+        bound_formset = SectionFormset(request.POST)
         date_b=[int(i) for i in request.POST['day_date'].split('-')]
         if DayPlan.objects.filter(user=request.user.username,day_date=date(date_b[0],date_b[1],date_b[2])).exists():# and DayPlan.objects.filter(user=request.user.username).exists():
-            day=DayPlan.objects.get(user=request.user.username,day_date=date(date_b[0],date_b[1],date_b[2]))           
+            day = DayPlan.objects.get(user=request.user.username,day_date=date(date_b[0],date_b[1],date_b[2]))
             return redirect(day) 
             
         if bound_form.is_valid():
-            new_day=bound_form.save()
+            if EveryDayTask.objects.filter(user=request.user.username,
+                                           date_everydaytask=date(date_b[0], date_b[1], date_b[2])).exists():
+                new_everydaytask = EveryDayTask.objects.get(user=request.user.username,
+                                                               date_everydaytask=date(date_b[0], date_b[1], date_b[2]))
+            else:
+                new_everydaytask = EveryDayTask.objects.create(user=request.user.username, body=dict(),
+                                                           date_everydaytask=date(date_b[0], date_b[1], date_b[2]))
+
+            for form in bound_formset:
+                if form['body'].value() != '':
+                    if form['body'].value() not in new_everydaytask.body.keys():
+                        new_everydaytask.body[form['body'].value()] = '' #form['comment'].value()
+            new_everydaytask.save()
+            new_day = bound_form.save()
             new_day.tasks.set(Task.objects.filter(user=request.user.username,name__in=bound_form_t['tasks'].value()))
-            new_day.user=request.user.username
+            new_day.user = request.user.username
             new_day.save()
-            
             return redirect(new_day)
         else:
-            return render(request,'tasks/create_day.html',context={'form':bound_form,'user':request.user.username,'s':(request.POST, request.user.username),
+            return render(request,'tasks/create_day.html',context={'form':bound_form,'user':request.user.username,'s':(request.POST, request.user.username), 'formset': bound_formset,
                             'tasks':bound_form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2024,1,1)))]))})
             
 class DayUpdate(LoginRequiredMixin,View):
 
     def get(self, request, year, month, day, user):
-        day=DayPlan.objects.get(user=request.user.username,day_date__year=year,day_date__month=month,day_date__day=day)
-        form_t=CreateDayTasksForm()
+        day = DayPlan.objects.get(user=request.user.username, day_date__year=year, day_date__month=month,
+                                  day_date__day=day)
+        form_t = CreateDayTasksForm()
+        if EveryDayTask.objects.filter(user=request.user.username, date_everydaytask=day.day_date):
 
-        task_choice=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2025,1,1))) if t not in day.tasks.all()]
-        return render(request,'tasks/update_day.html',context={'day':day,
-            'tasks':form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2025,1,1))) if t not in day.tasks.all()]))})
+            everydaytask = EveryDayTask.objects.get(user=request.user.username,
+                                                           date_everydaytask=day.day_date)
+        else:
+            everydaytask = EveryDayTask.objects.create(user=request.user.username, body=dict(),
+                                                       date_everydaytask=day.day_date)
+
+        SectionFormset = formset_factory(EveryDayTaskForm, extra=6)
+        initial = []
+        for key, value in everydaytask.body.items():
+            initial.append({'body': key, 'comment':value})
+        formset = SectionFormset(initial=initial)
+        return render(request,'tasks/update_day.html',context={'day': day, 'formset': formset, 'everydaytask': everydaytask,
+            'tasks': form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False, date_to_do__range=(date.today(),date(2025,1,1))) if t not in day.tasks.all()]))})
     def post(self,request, year, month, day, user):
-        day=DayPlan.objects.get(user=request.user.username,day_date__year=year,day_date__month=month,day_date__day=day)
-        bound_form_t=CreateDayTasksForm(request.POST)
-        day_task=[t.name for t in day.tasks.all()]
+        day = DayPlan.objects.get(user=request.user.username,day_date__year=year,day_date__month=month,day_date__day=day)
+        bound_form_t = CreateDayTasksForm(request.POST)
+        day_task = [t.name for t in day.tasks.all()]
         day_task.extend(bound_form_t['tasks'].value())
-        
+        if EveryDayTask.objects.filter(user=request.user.username, date_everydaytask=day.day_date):
+
+            everydaytask = EveryDayTask.objects.get(user=request.user.username,
+                                                           date_everydaytask=day.day_date)
+        else:
+            everydaytask = EveryDayTask.objects.create(user=request.user.username, body=dict(),
+                                                       date_everydaytask=day.day_date)
+
+        SectionFormset = formset_factory(EveryDayTaskForm, extra=6)
+        initial = []
+        for key, value in everydaytask.body.items():
+            initial.append({'body': key, 'comment':value})
+        bound_formset = SectionFormset(request.POST, initial=initial)
         if bound_form_t.is_valid():
-            day.tasks.set(Task.objects.filter(user=request.user.username,name__in=day_task))
+            for form in bound_formset:
+                if form['body'].value() != '':
+                    if form['body'].value() not in everydaytask.body.keys():
+                        everydaytask.body[form['body'].value()] = form['comment'].value()
+            everydaytask.save()
+            day.tasks.set(Task.objects.filter(user=request.user.username, name__in=day_task))
             day.save()
             return redirect(day)
         else:
-            return render(request,'tasks/update_day.html',context={'day':day,'s':day_task,
+            return render(request,'tasks/update_day.html',context={'day':day,'s':day_task, 'formset': bound_formset, 'everydaytask': everydaytask,
              'tasks':bound_form_t['tasks'].as_widget(forms.CheckboxSelectMultiple(choices=[(t.name,t.name) for t in Task.objects.filter(user=request.user.username,status=False,date_to_do__range=(date.today(),date(2025,1,1))) if t not in day.tasks.all()]))})        
     
 
@@ -205,32 +252,28 @@ class TaskSearch(LoginRequiredMixin,View):
                                      date_to_do__range=(date(date_to_do_b[0], date_to_do_b[1], date_to_do_b[2]), date(date_to_do_e[0], date_to_do_e[1], date_to_do_e[2])))
             str_url=''
             for key, value in request.GET.items():
-                str_url=str_url+key+'='+value+'&'
+                str_url = str_url+key+'='+value+'&'
                 
             paginator=Paginator(tasks,5)
             page_number=request.GET.get('page',1)
             page=paginator.get_page(page_number)
 
-            is_paginated=page.has_other_pages()
+            is_paginated = page.has_other_pages()
             if page.has_previous():
-                prev_url='?{}&page={}'.format(str_url[:-1],page.previous_page_number())
+                prev_url = '?{}&page={}'.format(str_url[:-1],page.previous_page_number())
             else:
-                prev_url=''
+                prev_url = ''
 
             if page.has_next():
                 next_url='?{}&page={}'.format(str_url[:-1],page.next_page_number())
             else:
-                next_url=''
-##                
+                next_url = ''
             return render(request,'tasks/task_search_list.html',context={'tasks':page,
                                                                     'is_paginated':is_paginated,
                                                                     'next_url':next_url,
                                                                     'prev_url':prev_url,
                                                                     's1':str_url[:-1],
                                                                     })
-        
-
-                
         else:
             form=TaskSearchForm(initial={'date_create_b': date(2023,1,1),'date_create_e': date(2024,1,1),
                                      'date_to_do_b': date(2023,1,1),'date_to_do_e': date(2024,1,1)})
@@ -281,3 +324,45 @@ class TaskDelete(LoginRequiredMixin,View):
         task=Task.objects.get(id=pk)
         task.delete()
         return redirect(reverse('tasks_list_url'))
+
+
+# class CostManyCreateFrontView(LoginRequiredMixin, APIView):
+#
+#     def get(self, request):
+#         form = CostManyCreateForm(initial={'cost_date': date.today()})
+#         SectionFormset = formset_factory(CostForm, extra=4)
+#         formset = SectionFormset()
+#         return render(request, 'costs/cost_many_create.html', {'form': form, 'formset': formset})
+#     def post(self, request):
+#         bound_form = CostManyCreateForm(request.POST, initial={'cost_date': date.today()})
+#         SectionFormset = formset_factory(CostForm, extra=4)
+#         bound_formset = SectionFormset(request.POST)
+#         if bound_form.is_valid() and bound_formset.is_valid():
+#             user = User.objects.get(id=bound_form['user'].value())
+#             category = CategoryCost.objects.get(id=bound_form['category'].value())
+#             cost_date = bound_form['cost_date'].value()
+#             summ=0
+#             for form in bound_formset:
+#                 if form['cost_name'].value()!='':
+#                     new_cost = Cost.objects.create(user=user, category=category, cost_date=cost_date,
+#                                                    cost_name=form['cost_name'].value(),
+#                                                    cost_sum=form['cost_sum'].value())
+#                     print(form['cost_sum'].value(), type(form['cost_sum'].value()))
+#                     summ +=Decimal(form['cost_sum'].value())
+#             #user = User.objects.get(id=request.data['user'])
+#             user.profile.balance = user.profile.balance - Decimal(summ)
+#             user.profile.save()
+#             if DayCost.objects.filter(day_date=request.POST['cost_date']).exists():
+#                 day = DayCost.objects.filter(day_date=request.POST['cost_date'])[0]
+#                 cost_d = Cost.objects.filter(cost_date=request.POST['cost_date'], user=user)
+#                 day.costs.set(cost_d)
+#                 day.save()
+#             else:
+#                 day = DayCost.objects.create(user=request.user.username, day_date=request.POST['cost_date'])
+#                 cost_d = Cost.objects.filter(cost_date=request.POST['cost_date'], user=user)
+#                 day.costs.set(cost_d)
+#                 day.save()
+#             return redirect('costs_front_list_url')
+#         else:
+#             return render(request, 'costs/cost_many_create.html', {'form': bound_form, 'formset': bound_formset})
+

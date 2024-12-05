@@ -82,7 +82,7 @@ class Task(models.Model):
 class DayPlan(models.Model):
     user=models.CharField(max_length=100, default='admin')
     day_date=models.DateField('День')
-    tasks=models.ManyToManyField(Task,verbose_name="задания", related_name="day_tasks", blank=True)
+    tasks=models.ManyToManyField(Task, verbose_name="задания", related_name="day_tasks", blank=True)
 
 
     class Meta:
@@ -98,9 +98,12 @@ class DayPlan(models.Model):
 
 
 class EveryDayTask(models.Model):
+    user = models.CharField(max_length=100, default='admin')
     body = models.JSONField()
     date_everydaytask = models.DateField()
 
+    def __str__(self):
+        return f"{self.user}: {self.date_everydaytask}"
     class Meta:
         verbose_name = "Каждодневное задание"
         verbose_name_plural = "Каждодневные задания"

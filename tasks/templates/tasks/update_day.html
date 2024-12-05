@@ -33,7 +33,20 @@ table, th, td {
     		
  	 </tr>
 	</table>
-	
+	<table style="width:150%">
+		<tr>
+			<td style="width:40%">Наименование</td>
+			<td style="width:130%">Комментарий</td>
+		</tr>
+		{{ formset.management_form }}
+		{% for form in formset%}
+			 <tr>
+				 <td style="width:40%">{{form.body}}</td>
+				 <td style="width:130%">{{form.comment}}</td>
+
+			 </tr>
+		{%endfor%}
+	</table>
 	</div>
 	<button type="submit" class="btn btn-primary">Редактировать</button>
 	</form>
